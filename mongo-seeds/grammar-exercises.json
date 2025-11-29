@@ -1,0 +1,209 @@
+[
+  {
+    "topicId": "REPLACE_WITH_PRESENT_SIMPLE_TOPIC_ID",
+    "type": "multiple_choice",
+    "question": "She ____ to school every day.",
+    "options": ["go", "goes", "went", "going"],
+    "answer": "goes",
+    "explanation": "Third person singular (she) requires 's' in present simple.",
+    "difficulty": "easy"
+  },
+  {
+    "topicId": "REPLACE_WITH_PRESENT_SIMPLE_TOPIC_ID",
+    "type": "fill_blank",
+    "question": "I ____ (work) at a hospital.",
+    "answer": "work",
+    "explanation": "First person (I) uses base form of the verb in present simple.",
+    "difficulty": "easy"
+  },
+  {
+    "topicId": "REPLACE_WITH_PRESENT_SIMPLE_TOPIC_ID",
+    "type": "multiple_choice",
+    "question": "They ____ like coffee.",
+    "options": ["doesn't", "don't", "aren't", "isn't"],
+    "answer": "don't",
+    "explanation": "Use 'don't' for plural subjects (they) in negative present simple.",
+    "difficulty": "easy"
+  },
+  {
+    "topicId": "REPLACE_WITH_PRESENT_SIMPLE_TOPIC_ID",
+    "type": "sentence_order",
+    "question": "Order these words to make a sentence:",
+    "sentenceParts": ["She", "usually", "gets up", "at 7 AM"],
+    "answer": "She usually gets up at 7 AM",
+    "explanation": "Subject + adverb + verb phrase + time expression.",
+    "difficulty": "medium"
+  },
+  {
+    "topicId": "REPLACE_WITH_PRESENT_SIMPLE_TOPIC_ID",
+    "type": "fill_blank",
+    "question": "____ he speak English?",
+    "answer": "Does",
+    "explanation": "Use 'Does' for third person singular questions in present simple.",
+    "difficulty": "medium"
+  },
+  {
+    "topicId": "REPLACE_WITH_PAST_SIMPLE_TOPIC_ID",
+    "type": "multiple_choice",
+    "question": "I ____ to the store yesterday.",
+    "options": ["go", "went", "gone", "going"],
+    "answer": "went",
+    "explanation": "'Go' is irregular: go → went. Yesterday indicates past simple.",
+    "difficulty": "easy"
+  },
+  {
+    "topicId": "REPLACE_WITH_PAST_SIMPLE_TOPIC_ID",
+    "type": "fill_blank",
+    "question": "She ____ (study) English last year.",
+    "answer": "studied",
+    "explanation": "Regular verbs add -ed in past simple. 'Last year' indicates past time.",
+    "difficulty": "easy"
+  },
+  {
+    "topicId": "REPLACE_WITH_PAST_SIMPLE_TOPIC_ID",
+    "type": "multiple_choice",
+    "question": "We ____ see the movie because we were busy.",
+    "options": ["didn't", "don't", "wasn't", "weren't"],
+    "answer": "didn't",
+    "explanation": "Use 'didn't' + base verb for all subjects in negative past simple.",
+    "difficulty": "easy"
+  },
+  {
+    "topicId": "REPLACE_WITH_PAST_SIMPLE_TOPIC_ID",
+    "type": "sentence_order",
+    "question": "Order these words to make a sentence:",
+    "sentenceParts": ["They", "visited", "Paris", "last summer"],
+    "answer": "They visited Paris last summer",
+    "explanation": "Subject + past verb + object + time expression.",
+    "difficulty": "medium"
+  },
+  {
+    "topicId": "REPLACE_WITH_PAST_SIMPLE_TOPIC_ID",
+    "type": "fill_blank",
+    "question": "____ you go to the party last night?",
+    "answer": "Did",
+    "explanation": "Use 'Did' + subject + base verb for past simple questions.",
+    "difficulty": "medium"
+  },
+  {
+    "topicId": "REPLACE_WITH_PRESENT_CONTINUOUS_TOPIC_ID",
+    "type": "multiple_choice",
+    "question": "I ____ studying right now.",
+    "options": ["am", "is", "are", "be"],
+    "answer": "am",
+    "explanation": "Use 'am' for first person (I) in present continuous.",
+    "difficulty": "easy"
+  },
+  {
+    "topicId": "REPLACE_WITH_PRESENT_CONTINUOUS_TOPIC_ID",
+    "type": "fill_blank",
+    "question": "They ____ (play) soccer at the moment.",
+    "answer": "are playing",
+    "explanation": "Use 'are' for plural (they) + verb + ing. 'At the moment' indicates present continuous.",
+    "difficulty": "easy"
+  },
+  {
+    "topicId": "REPLACE_WITH_PRESENT_CONTINUOUS_TOPIC_ID",
+    "type": "multiple_choice",
+    "question": "She isn't ____ her homework right now.",
+    "options": ["do", "does", "doing", "did"],
+    "answer": "doing",
+    "explanation": "Present continuous requires verb + ing form.",
+    "difficulty": "medium"
+  },
+  {
+    "topicId": "REPLACE_WITH_COMPARATIVES_TOPIC_ID",
+    "type": "multiple_choice",
+    "question": "This car is ____ than that one.",
+    "options": ["fast", "faster", "fastest", "more fast"],
+    "answer": "faster",
+    "explanation": "One-syllable adjectives add -er for comparatives.",
+    "difficulty": "easy"
+  },
+  {
+    "topicId": "REPLACE_WITH_COMPARATIVES_TOPIC_ID",
+    "type": "fill_blank",
+    "question": "This book is ____ (interesting) than the movie.",
+    "answer": "more interesting",
+    "explanation": "Long adjectives (3+ syllables) use 'more' + adjective for comparatives.",
+    "difficulty": "medium"
+  },
+  {
+    "topicId": "REPLACE_WITH_COMPARATIVES_TOPIC_ID",
+    "type": "multiple_choice",
+    "question": "English is ____ than Chinese.",
+    "options": ["easy", "easier", "easiest", "more easy"],
+    "answer": "easier",
+    "explanation": "Two-syllable adjectives ending in -y change to -ier (easy → easier).",
+    "difficulty": "medium"
+  },
+  {
+    "topicId": "REPLACE_WITH_COMPARATIVES_TOPIC_ID",
+    "type": "multiple_choice",
+    "question": "This restaurant is ____ than the other one.",
+    "options": ["good", "better", "best", "more good"],
+    "answer": "better",
+    "explanation": "'Good' has an irregular comparative form: good → better.",
+    "difficulty": "hard"
+  },
+  {
+    "topicId": "REPLACE_WITH_FUTURE_WILL_TOPIC_ID",
+    "type": "fill_blank",
+    "question": "I ____ help you with your homework.",
+    "answer": "will",
+    "explanation": "Use 'will' + base verb for future predictions or promises.",
+    "difficulty": "easy"
+  },
+  {
+    "topicId": "REPLACE_WITH_FUTURE_WILL_TOPIC_ID",
+    "type": "multiple_choice",
+    "question": "It ____ rain tomorrow.",
+    "options": ["will", "is", "was", "has"],
+    "answer": "will",
+    "explanation": "'Will' is used for future predictions. 'Tomorrow' indicates future time.",
+    "difficulty": "easy"
+  },
+  {
+    "topicId": "REPLACE_WITH_FUTURE_WILL_TOPIC_ID",
+    "type": "fill_blank",
+    "question": "I ____ (not forget) to call you.",
+    "answer": "won't forget",
+    "explanation": "Use 'won't' (will not) + base verb for negative future.",
+    "difficulty": "medium"
+  },
+  {
+    "topicId": "REPLACE_WITH_PRESENT_PERFECT_TOPIC_ID",
+    "type": "multiple_choice",
+    "question": "I ____ lived here for five years.",
+    "options": ["have", "has", "had", "am"],
+    "answer": "have",
+    "explanation": "Use 'have' for first person (I) in present perfect.",
+    "difficulty": "easy"
+  },
+  {
+    "topicId": "REPLACE_WITH_PRESENT_PERFECT_TOPIC_ID",
+    "type": "fill_blank",
+    "question": "She ____ (finish) her homework already.",
+    "answer": "has finished",
+    "explanation": "Use 'has' for third person + past participle. 'Already' indicates present perfect.",
+    "difficulty": "medium"
+  },
+  {
+    "topicId": "REPLACE_WITH_PRESENT_PERFECT_TOPIC_ID",
+    "type": "multiple_choice",
+    "question": "Have you ____ to Japan?",
+    "options": ["go", "went", "gone", "going"],
+    "answer": "gone",
+    "explanation": "Present perfect uses past participle. Go → gone (irregular verb).",
+    "difficulty": "medium"
+  },
+  {
+    "topicId": "REPLACE_WITH_PRESENT_PERFECT_TOPIC_ID",
+    "type": "fill_blank",
+    "question": "I ____ (never see) such a beautiful sunset.",
+    "answer": "have never seen",
+    "explanation": "Present perfect + 'never' + past participle. See → seen (irregular).",
+    "difficulty": "hard"
+  }
+]
+

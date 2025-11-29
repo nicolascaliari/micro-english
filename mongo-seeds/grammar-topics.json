@@ -1,0 +1,375 @@
+[
+  {
+    "title": "Present Simple",
+    "description": "We use the present simple to talk about habits, routines, and facts.",
+    "level": "A1",
+    "category": "verb tenses",
+    "structure": [
+      {
+        "rule": "Affirmative",
+        "pattern": "subject + base verb (+ s/es for he/she/it)",
+        "examples": [
+          {
+            "en": "I work every day.",
+            "es": "Trabajo todos los días."
+          },
+          {
+            "en": "She works at a hospital.",
+            "es": "Ella trabaja en un hospital."
+          }
+        ]
+      },
+      {
+        "rule": "Negative",
+        "pattern": "subject + do/does + not + base verb",
+        "examples": [
+          {
+            "en": "They don't like coffee.",
+            "es": "A ellos no les gusta el café."
+          },
+          {
+            "en": "He doesn't speak French.",
+            "es": "Él no habla francés."
+          }
+        ]
+      },
+      {
+        "rule": "Questions",
+        "pattern": "Do/Does + subject + base verb?",
+        "examples": [
+          {
+            "en": "Do you speak English?",
+            "es": "¿Hablas inglés?"
+          },
+          {
+            "en": "Does she work here?",
+            "es": "¿Ella trabaja aquí?"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "en": "I wake up at 7 AM every morning.",
+        "es": "Me despierto a las 7 AM todas las mañanas.",
+        "note": "Habitual action"
+      },
+      {
+        "en": "The sun rises in the east.",
+        "es": "El sol sale por el este.",
+        "note": "General fact"
+      },
+      {
+        "en": "She plays tennis on weekends.",
+        "es": "Ella juega tenis los fines de semana.",
+        "note": "Regular routine"
+      }
+    ],
+    "tips": [
+      "Add 's' or 'es' to the verb for he/she/it (third person singular)",
+      "Use 'do not' (don't) for I/you/we/they",
+      "Use 'does not' (doesn't) for he/she/it",
+      "Time expressions like 'always', 'usually', 'often' are common with present simple"
+    ]
+  },
+  {
+    "title": "Past Simple",
+    "description": "We use the past simple to talk about completed actions in the past.",
+    "level": "A2",
+    "category": "verb tenses",
+    "structure": [
+      {
+        "rule": "Regular Verbs",
+        "pattern": "subject + verb + ed",
+        "examples": [
+          {
+            "en": "I worked yesterday.",
+            "es": "Trabajé ayer."
+          },
+          {
+            "en": "She played tennis last week.",
+            "es": "Ella jugó tenis la semana pasada."
+          }
+        ]
+      },
+      {
+        "rule": "Irregular Verbs",
+        "pattern": "subject + irregular past form",
+        "examples": [
+          {
+            "en": "I went to the store.",
+            "es": "Fui a la tienda."
+          },
+          {
+            "en": "They ate pizza for dinner.",
+            "es": "Comieron pizza para la cena."
+          }
+        ]
+      },
+      {
+        "rule": "Negative",
+        "pattern": "subject + did + not + base verb",
+        "examples": [
+          {
+            "en": "I didn't see him.",
+            "es": "No lo vi."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "en": "I visited Paris last summer.",
+        "es": "Visité París el verano pasado.",
+        "note": "Completed action with time reference"
+      },
+      {
+        "en": "She didn't come to the party.",
+        "es": "Ella no vino a la fiesta.",
+        "note": "Negative form"
+      },
+      {
+        "en": "We met at the café yesterday.",
+        "es": "Nos conocimos en el café ayer.",
+        "note": "Past action with time marker"
+      }
+    ],
+    "tips": [
+      "Regular verbs add -ed (work → worked)",
+      "Irregular verbs change form (go → went, see → saw)",
+      "Use 'did not' (didn't) for all subjects in negative",
+      "Time expressions like 'yesterday', 'last week', 'ago' indicate past simple"
+    ]
+  },
+  {
+    "title": "Present Continuous",
+    "description": "We use the present continuous to talk about actions happening now or temporary situations.",
+    "level": "A1",
+    "category": "verb tenses",
+    "structure": [
+      {
+        "rule": "Affirmative",
+        "pattern": "subject + am/is/are + verb + ing",
+        "examples": [
+          {
+            "en": "I am studying English.",
+            "es": "Estoy estudiando inglés."
+          },
+          {
+            "en": "She is reading a book.",
+            "es": "Ella está leyendo un libro."
+          }
+        ]
+      },
+      {
+        "rule": "Negative",
+        "pattern": "subject + am/is/are + not + verb + ing",
+        "examples": [
+          {
+            "en": "They are not sleeping.",
+            "es": "Ellos no están durmiendo."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "en": "I'm learning to play the guitar.",
+        "es": "Estoy aprendiendo a tocar la guitarra.",
+        "note": "Action in progress"
+      },
+      {
+        "en": "She's working in London this month.",
+        "es": "Ella está trabajando en Londres este mes.",
+        "note": "Temporary situation"
+      }
+    ],
+    "tips": [
+      "Use 'am' for I, 'is' for he/she/it, 'are' for you/we/they",
+      "Add -ing to the base verb",
+      "Use for actions happening now or around now",
+      "Not used with stative verbs (like, know, understand)"
+    ]
+  },
+  {
+    "title": "Comparatives",
+    "description": "We use comparatives to compare two things or people.",
+    "level": "A2",
+    "category": "adjectives",
+    "structure": [
+      {
+        "rule": "Short Adjectives",
+        "pattern": "adjective + er + than",
+        "examples": [
+          {
+            "en": "This car is faster than that one.",
+            "es": "Este auto es más rápido que ese."
+          },
+          {
+            "en": "She is taller than her sister.",
+            "es": "Ella es más alta que su hermana."
+          }
+        ]
+      },
+      {
+        "rule": "Long Adjectives",
+        "pattern": "more + adjective + than",
+        "examples": [
+          {
+            "en": "This movie is more interesting than that one.",
+            "es": "Esta película es más interesante que esa."
+          }
+        ]
+      },
+      {
+        "rule": "Irregular",
+        "pattern": "irregular form + than",
+        "examples": [
+          {
+            "en": "This is better than that.",
+            "es": "Esto es mejor que eso."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "en": "English is easier than Chinese.",
+        "es": "El inglés es más fácil que el chino.",
+        "note": "Comparing difficulty"
+      },
+      {
+        "en": "This restaurant is more expensive than the other one.",
+        "es": "Este restaurante es más caro que el otro.",
+        "note": "Comparing price"
+      }
+    ],
+    "tips": [
+      "One-syllable adjectives: add -er (fast → faster)",
+      "Two-syllable adjectives ending in -y: change y to i and add -er (happy → happier)",
+      "Long adjectives: use 'more' + adjective",
+      "Irregular: good → better, bad → worse, far → farther/further"
+    ]
+  },
+  {
+    "title": "Future with Will",
+    "description": "We use 'will' to talk about future predictions, promises, and spontaneous decisions.",
+    "level": "A2",
+    "category": "verb tenses",
+    "structure": [
+      {
+        "rule": "Affirmative",
+        "pattern": "subject + will + base verb",
+        "examples": [
+          {
+            "en": "I will help you.",
+            "es": "Te ayudaré."
+          },
+          {
+            "en": "She will arrive tomorrow.",
+            "es": "Ella llegará mañana."
+          }
+        ]
+      },
+      {
+        "rule": "Negative",
+        "pattern": "subject + will + not + base verb",
+        "examples": [
+          {
+            "en": "I won't forget.",
+            "es": "No olvidaré."
+          }
+        ]
+      },
+      {
+        "rule": "Questions",
+        "pattern": "Will + subject + base verb?",
+        "examples": [
+          {
+            "en": "Will you come to the party?",
+            "es": "¿Vendrás a la fiesta?"
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "en": "It will rain tomorrow.",
+        "es": "Lloverá mañana.",
+        "note": "Future prediction"
+      },
+      {
+        "en": "I'll call you later.",
+        "es": "Te llamaré más tarde.",
+        "note": "Spontaneous decision"
+      },
+      {
+        "en": "We will never forget this moment.",
+        "es": "Nunca olvidaremos este momento.",
+        "note": "Promise"
+      }
+    ],
+    "tips": [
+      "Will is the same for all subjects",
+      "Use 'won't' for the negative form",
+      "Common for predictions, promises, and quick decisions",
+      "Often used with 'probably', 'maybe', 'I think'"
+    ]
+  },
+  {
+    "title": "Present Perfect",
+    "description": "We use the present perfect to talk about past actions with a connection to the present.",
+    "level": "B1",
+    "category": "verb tenses",
+    "structure": [
+      {
+        "rule": "Affirmative",
+        "pattern": "subject + have/has + past participle",
+        "examples": [
+          {
+            "en": "I have visited Paris.",
+            "es": "He visitado París."
+          },
+          {
+            "en": "She has finished her homework.",
+            "es": "Ella ha terminado su tarea."
+          }
+        ]
+      },
+      {
+        "rule": "Negative",
+        "pattern": "subject + have/has + not + past participle",
+        "examples": [
+          {
+            "en": "I haven't seen him today.",
+            "es": "No lo he visto hoy."
+          }
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "en": "I have lived here for five years.",
+        "es": "He vivido aquí por cinco años.",
+        "note": "Action started in past, continues to present"
+      },
+      {
+        "en": "Have you ever been to Japan?",
+        "es": "¿Alguna vez has estado en Japón?",
+        "note": "Life experience"
+      },
+      {
+        "en": "She has just arrived.",
+        "es": "Ella acaba de llegar.",
+        "note": "Recent action"
+      }
+    ],
+    "tips": [
+      "Use 'have' for I/you/we/they, 'has' for he/she/it",
+      "Use past participle: regular (worked) or irregular (gone, seen)",
+      "Common with 'ever', 'never', 'already', 'yet', 'just', 'for', 'since'",
+      "Connects past action to present moment"
+    ]
+  }
+]
+

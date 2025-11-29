@@ -1,0 +1,51 @@
+[
+  {
+    "userId": "REPLACE_WITH_USER_ID_1",
+    "topicId": "REPLACE_WITH_PRESENT_SIMPLE_TOPIC_ID",
+    "status": "completed",
+    "exercisesCompleted": 15,
+    "correctRatio": 87,
+    "lastPractice": "2024-11-29T10:30:00Z"
+  },
+  {
+    "userId": "REPLACE_WITH_USER_ID_1",
+    "topicId": "REPLACE_WITH_PAST_SIMPLE_TOPIC_ID",
+    "status": "in_progress",
+    "exercisesCompleted": 8,
+    "correctRatio": 75,
+    "lastPractice": "2024-11-29T14:20:00Z"
+  },
+  {
+    "userId": "REPLACE_WITH_USER_ID_1",
+    "topicId": "REPLACE_WITH_PRESENT_CONTINUOUS_TOPIC_ID",
+    "status": "completed",
+    "exercisesCompleted": 12,
+    "correctRatio": 92,
+    "lastPractice": "2024-11-28T16:45:00Z"
+  },
+  {
+    "userId": "REPLACE_WITH_USER_ID_1",
+    "topicId": "REPLACE_WITH_COMPARATIVES_TOPIC_ID",
+    "status": "not_started",
+    "exercisesCompleted": 0,
+    "correctRatio": 0,
+    "lastPractice": "2024-11-25T09:00:00Z"
+  },
+  {
+    "userId": "REPLACE_WITH_USER_ID_2",
+    "topicId": "REPLACE_WITH_PRESENT_SIMPLE_TOPIC_ID",
+    "status": "completed",
+    "exercisesCompleted": 20,
+    "correctRatio": 95,
+    "lastPractice": "2024-11-29T11:15:00Z"
+  },
+  {
+    "userId": "REPLACE_WITH_USER_ID_2",
+    "topicId": "REPLACE_WITH_PRESENT_PERFECT_TOPIC_ID",
+    "status": "in_progress",
+    "exercisesCompleted": 6,
+    "correctRatio": 67,
+    "lastPractice": "2024-11-29T13:30:00Z"
+  }
+]
+

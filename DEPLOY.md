@@ -17,19 +17,31 @@
 - **Root Directory**: Dejar vacío (raíz del proyecto)
 
 #### Build & Deploy:
-- **Build Command**: 
-  ```bash
-  npm ci && npm run build
-  ```
-  O alternativamente:
-  ```bash
-  NODE_ENV=development npm install && npm run build
-  ```
-  
-- **Start Command**: 
-  ```bash
-  npm run start:prod
-  ```
+
+**Build Command** (usa esta opción):
+```bash
+npm install && ./node_modules/.bin/nest build
+```
+
+O si prefieres usar el script de package.json:
+```bash
+npm install && npm run build
+```
+
+Si ninguna de las anteriores funciona, compila directamente con TypeScript:
+```bash
+npm install && npx tsc -p tsconfig.build.json
+```
+
+**Start Command**: 
+```bash
+npm run start:prod
+```
+
+#### ⚠️ Variable NODE_ENV durante el Build:
+- **NO configures** `NODE_ENV=production` en las variables de entorno ANTES del build
+- Render configurará `NODE_ENV=production` automáticamente cuando ejecute el start command
+- Si configuras `NODE_ENV=production` antes, npm no instalará devDependencies y el build fallará
 
 ### 3. Variables de Entorno
 
@@ -68,17 +80,24 @@ Agrega estas variables de entorno en **Environment**:
 
 ## ⚠️ Solución de Problemas
 
-### Error: "nest: not found"
-✅ **Solución**: Usa `npm ci` o `NODE_ENV=development npm install` en el build command para instalar devDependencies.
+### Error: "nest: not found" o "could not determine executable to run"
+✅ **Solución**: El problema es que Render no instala devDependencies durante el build.
 
-**Build Command recomendado**:
+**Build Command que DEBES usar**:
 ```bash
-npm ci && npm run build
+npm install && npm run build
 ```
 
-O si eso no funciona:
+**IMPORTANTE**: 
+1. Verifica que NO tengas `NODE_ENV=production` configurada ANTES del build (solo después)
+2. Si aún falla, usa la ruta completa:
 ```bash
-NODE_ENV=development npm install && npm run build
+npm install && ./node_modules/.bin/nest build
+```
+
+3. O compila directamente con TypeScript (si todo lo demás falla):
+```bash
+npm install && npm run build:tsc
 ```
 
 ### Error de Memoria (Heap Out of Memory)

@@ -19,8 +19,13 @@
 #### Build & Deploy:
 - **Build Command**: 
   ```bash
-  npm install && npm run build
+  npm ci && npm run build
   ```
+  O alternativamente:
+  ```bash
+  NODE_ENV=development npm install && npm run build
+  ```
+  
 - **Start Command**: 
   ```bash
   npm run start:prod
@@ -36,7 +41,9 @@ Agrega estas variables de entorno en **Environment**:
 | `PORT` | Dejar vacío | Render lo asigna automáticamente |
 | `MONGODB_URI` | `mongodb+srv://...` | Tu URI de MongoDB Atlas |
 
-⚠️ **Importante**: La variable `PORT` debe estar vacía para que Render la asigne automáticamente.
+⚠️ **Importante**: 
+- La variable `PORT` debe estar vacía para que Render la asigne automáticamente.
+- `NODE_ENV=production` solo para el runtime, NO durante el build.
 
 ### 4. Plan y Desplegar
 
@@ -49,6 +56,7 @@ Agrega estas variables de entorno en **Environment**:
 ### 1. Scripts optimizados (`package.json`)
 - `start`: Ahora ejecuta el código compilado con más memoria
 - `start:prod`: Configurado para producción con límite de memoria aumentado
+- `build`: Usa `npx nest build` para asegurar que encuentre el CLI
 
 ### 2. Puerto configurado (`src/main.ts`)
 - La aplicación ahora escucha en `0.0.0.0` para ser accesible desde Render
@@ -60,6 +68,19 @@ Agrega estas variables de entorno en **Environment**:
 
 ## ⚠️ Solución de Problemas
 
+### Error: "nest: not found"
+✅ **Solución**: Usa `npm ci` o `NODE_ENV=development npm install` en el build command para instalar devDependencies.
+
+**Build Command recomendado**:
+```bash
+npm ci && npm run build
+```
+
+O si eso no funciona:
+```bash
+NODE_ENV=development npm install && npm run build
+```
+
 ### Error de Memoria (Heap Out of Memory)
 ✅ **Resuelto**: Los scripts ahora usan `--max-old-space-size=2048` para aumentar la memoria disponible.
 
@@ -70,6 +91,7 @@ Agrega estas variables de entorno en **Environment**:
 - Verifica que Node.js 20 esté disponible (definido en `.nvmrc`)
 - Asegúrate de que todas las dependencias estén en `package.json`
 - Revisa los logs de build en Render para errores específicos
+- Usa `npm ci` en lugar de `npm install` para builds más confiables
 
 ### La aplicación no inicia
 - Verifica que `MONGODB_URI` esté configurada correctamente
@@ -82,6 +104,7 @@ Agrega estas variables de entorno en **Environment**:
 2. **Builds subsecuentes**: Los siguientes deploys son más rápidos (solo cambia lo modificado)
 3. **Logs**: Puedes ver logs en tiempo real en el dashboard de Render
 4. **Health Check**: Render verificará que la app responda en el puerto asignado
+5. **devDependencies**: Durante el build, Render necesita las devDependencies (como @nestjs/cli y TypeScript). Usa `npm ci` que las instala por defecto.
 
 ## 🔗 Verificar el Deploy
 
@@ -99,4 +122,3 @@ curl https://micro-english-api.onrender.com
 
 - [Documentación de Render](https://render.com/docs)
 - [NestJS Deployment](https://docs.nestjs.com/deployment)
-

@@ -16,9 +16,11 @@ async function bootstrap() {
 
   const port = process.env.PORT || 3001;
   
-  await app.listen(port);
-  console.log(`🚀 Aplicación corriendo en: http://localhost:${port}`);
-  console.log('✅ Conexión a MongoDB exitosa');
+  await app.listen(port, '0.0.0.0', () => {
+    console.log(`🚀 Aplicación corriendo en el puerto: ${port}`);
+    console.log(`📡 Server listening on 0.0.0.0:${port}`);
+    console.log('✅ Aplicación lista para recibir peticiones');
+  });
 }
 
 bootstrap().catch((error) => {

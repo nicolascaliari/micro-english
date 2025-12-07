@@ -15,7 +15,7 @@ export class UserGrammarProgressService {
   constructor(
     @InjectModel(UserGrammarProgress.name)
     private progressModel: Model<UserGrammarProgressDocument>,
-  ) {}
+  ) { }
 
   async create(
     createDto: CreateUserGrammarProgressDto,
@@ -150,7 +150,7 @@ export class UserGrammarProgressService {
     }
 
     // Marcar como completado si tiene buen ratio y suficientes ejercicios
-    if (progress.exercisesCompleted >= 10 && progress.correctRatio >= 80) {
+    if (progress.exercisesCompleted >= 10 && progress.correctRatio >= 70) {
       progress.status = 'completed';
     }
 
@@ -172,9 +172,9 @@ export class UserGrammarProgressService {
       averageCorrectRatio:
         allProgress.length > 0
           ? Math.round(
-              allProgress.reduce((sum, p) => sum + p.correctRatio, 0) /
-                allProgress.length,
-            )
+            allProgress.reduce((sum, p) => sum + p.correctRatio, 0) /
+            allProgress.length,
+          )
           : 0,
     };
 

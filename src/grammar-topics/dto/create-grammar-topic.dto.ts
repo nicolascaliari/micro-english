@@ -46,7 +46,7 @@ export class CreateGrammarTopicDto {
   level: 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2';
 
   @IsString()
-  category: string;
+  categoryId: string;
 
   @IsOptional()
   @IsArray()

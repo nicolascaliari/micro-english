@@ -19,6 +19,7 @@ export class GrammarTopicsService {
   }
 
   async findAll(): Promise<GrammarTopic[]> {
+    console.log('findAll');
     return this.grammarTopicModel.find().exec();
   }
 
@@ -26,8 +27,9 @@ export class GrammarTopicsService {
     return this.grammarTopicModel.find({ level }).exec();
   }
 
-  async findByCategory(category: string): Promise<GrammarTopic[]> {
-    return this.grammarTopicModel.find({ category }).exec();
+  async findByCategory(categoryId: string): Promise<GrammarTopic[]> {
+    validateObjectId(categoryId, 'Category ID');
+    return this.grammarTopicModel.find({ categoryId }).exec();
   }
 
   async findOne(id: string): Promise<GrammarTopic> {

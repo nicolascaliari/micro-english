@@ -22,19 +22,26 @@ export class GrammarTopicsController {
   }
 
   @Get()
-  findAll(@Query('level') level?: string, @Query('category') category?: string) {
+  findAll(@Query('level') level?: string, @Query('categoryId') categoryId?: string) {
     if (level) {
       return this.grammarTopicsService.findByLevel(level);
     }
-    if (category) {
-      return this.grammarTopicsService.findByCategory(category);
+    if (categoryId) {
+      return this.grammarTopicsService.findByCategory(categoryId);
     }
     return this.grammarTopicsService.findAll();
   }
 
+  @Get('category/:categoryId')
+  async findByCategory(@Param('categoryId') categoryId: string) {
+    return this.grammarTopicsService.findByCategory(categoryId);
+  }
+
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.grammarTopicsService.findOne(id);
+  async findOne(@Param('id') id: string) {
+    let topic = await this.grammarTopicsService.findOne(id);
+    console.log('topic', topic);
+    return topic;
   }
 
   @Patch(':id')

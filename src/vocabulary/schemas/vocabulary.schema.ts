@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Types } from 'mongoose';
 
 export type VocabularyDocument = Vocabulary & Document;
 
@@ -16,6 +16,9 @@ export class Vocabulary {
 
   @Prop({ required: true })
   level: string;
+
+  @Prop({ type: Types.ObjectId, ref: 'Category', required: true })
+  categoryId: Types.ObjectId;
 
   @Prop({ type: [String], required: false })
   tags: string[];

@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Types } from 'mongoose';
 
 export type GrammarTopicDocument = GrammarTopic & Document;
 
@@ -47,8 +47,8 @@ export class GrammarTopic {
   })
   level: string;
 
-  @Prop({ required: true, trim: true, lowercase: true })
-  category: string;
+  @Prop({ type: Types.ObjectId, ref: 'Category', required: true })
+  categoryId: Types.ObjectId;
 
   @Prop({ type: [GrammarStructure], default: [] })
   structure: GrammarStructure[];

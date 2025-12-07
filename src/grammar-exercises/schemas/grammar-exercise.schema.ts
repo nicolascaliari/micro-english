@@ -42,6 +42,23 @@ export class GrammarExercise {
 
 export const GrammarExerciseSchema = SchemaFactory.createForClass(GrammarExercise);
 
+// Hook pre-save: convertir topicId a ObjectId si viene como string
+GrammarExerciseSchema.pre('save', function (next) {
+  if (this.topicId && typeof this.topicId === 'string') {
+    this.topicId = new Types.ObjectId(this.topicId);
+  }
+  next();
+});
+
+// Hook pre-update: convertir topicId a ObjectId si viene como string
+GrammarExerciseSchema.pre(['updateOne', 'findOneAndUpdate'], function (next) {
+  const update = this.getUpdate() as any;
+  if (update && update.topicId && typeof update.topicId === 'string') {
+    update.topicId = new Types.ObjectId(update.topicId);
+  }
+  next();
+});
+
 // Índice para búsquedas por topicId
 GrammarExerciseSchema.index({ topicId: 1 });
 

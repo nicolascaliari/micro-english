@@ -8,6 +8,8 @@ import {
   Delete,
   HttpCode,
   HttpStatus,
+  Query,
+  BadRequestException,
 } from '@nestjs/common';
 import { VocabularyService } from './vocabulary.service';
 import { CreateVocabularyDto } from './dto/create-vocabulary.dto';
@@ -16,12 +18,36 @@ import { UpdateLevelDto } from './dto/update-level.dto';
 
 @Controller('vocabulary')
 export class VocabularyController {
-  constructor(private readonly vocabularyService: VocabularyService) {}
+  constructor(private readonly vocabularyService: VocabularyService) { }
+
+  @Get('practice')
+  async getPracticeWords(@Query('userId') userId: string) {
+    if (!userId) {
+      throw new BadRequestException('User ID is required');
+    }
+    return this.vocabularyService.getPracticeWords(userId);
+  }
+
+  @Post(':id/progress')
+  async saveProgress(
+    @Param('id') id: string,
+    @Body() body: { userId: string; rating: 'again' | 'hard' | 'good' | 'easy' },
+  ) {
+    return this.vocabularyService.saveProgress(body.userId, id, body.rating);
+  }
 
   @Get()
-  async getAll() {
+  async getAll(@Query('categoryId') categoryId?: string) {
+    if (categoryId) {
+      return this.vocabularyService.findByCategory(categoryId);
+    }
     const vocabulary = await this.vocabularyService.findAll();
     return vocabulary;
+  }
+
+  @Get('category/:categoryId')
+  async findByCategory(@Param('categoryId') categoryId: string) {
+    return this.vocabularyService.findByCategory(categoryId);
   }
 
   @Get(':id')

@@ -27,9 +27,17 @@ export class GrammarExercisesService {
   }
 
   async findByTopic(topicId: string): Promise<GrammarExercise[]> {
-    return this.grammarExerciseModel
-      .find({ topicId: toObjectId(topicId, 'topicId') })
+    // Buscar tanto por ObjectId como por string para compatibilidad
+    // Si topicId está guardado como string en algunos documentos
+    const exercises = await this.grammarExerciseModel
+      .find({
+        $or: [
+          { topicId: toObjectId(topicId, 'topicId') },
+          { topicId: topicId }, // Buscar también como string
+        ],
+      })
       .exec();
+    return exercises;
   }
 
   async findByDifficulty(difficulty: string): Promise<GrammarExercise[]> {
@@ -92,9 +100,17 @@ export class GrammarExercisesService {
   }
 
   async getRandomExercises(topicId: string, limit: number = 5): Promise<GrammarExercise[]> {
+    // Buscar tanto por ObjectId como por string
     return this.grammarExerciseModel
       .aggregate([
-        { $match: { topicId: toObjectId(topicId, 'topicId') } },
+        {
+          $match: {
+            $or: [
+              { topicId: toObjectId(topicId, 'topicId') },
+              { topicId: topicId }, // Buscar también como string
+            ],
+          },
+        },
         { $sample: { size: limit } },
       ])
       .exec();

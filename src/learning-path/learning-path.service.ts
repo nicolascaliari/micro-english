@@ -165,11 +165,12 @@ export class LearningPathService {
     // Verificar si pasó
     const passed = score >= (step as any).required_score;
 
-    // Guardar intento
+    // Buscar el intento activo (sin completar) más reciente
     const attempts = await this.stepAttemptsService.findByUserAndStep(userId, stepId);
     const currentAttempt = attempts.find(a => !a.completed_at);
 
     if (currentAttempt) {
+      // Actualizar el intento existente con los resultados
       await this.stepAttemptsService.completeAttempt(
         (currentAttempt as any)._id.toString(),
         score,
@@ -178,7 +179,8 @@ export class LearningPathService {
         passed,
       );
     } else {
-      // Si no hay intento activo, crear uno nuevo
+      // Si no hay intento activo, crear uno nuevo ya completado
+      // Esto puede pasar si se completa un step sin haberlo iniciado primero
       await this.stepAttemptsService.create({
         userId,
         stepId,
@@ -251,6 +253,8 @@ export class LearningPathService {
    * Los unlock_requirements son números que corresponden a los "order" de los pasos
    */
   private isStepUnlockedByOrders(step: any, completedOrders: Set<number>): boolean {
+    console.log('step', step);
+    console.log('completedOrders', completedOrders);
     // Si no tiene requisitos, está desbloqueado
     if (!step.unlock_requirements || step.unlock_requirements.length === 0) {
       return true;

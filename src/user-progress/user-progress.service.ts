@@ -87,13 +87,36 @@ export class UserProgressService {
     stepId: string,
     updateDto: Partial<UserProgress>,
   ): Promise<UserProgress> {
+    const userObjectId = toObjectId(userId, 'userId');
+    const stepObjectId = toObjectId(stepId, 'stepId');
+    
+    // Preparar el update object
+    const updateObject: any = {
+      $set: updateDto,
+      $setOnInsert: {
+        userId: userObjectId,
+        stepId: stepObjectId,
+      }
+    };
+    
+    // Solo agregar valores por defecto en $setOnInsert si NO están en updateDto
+    if (updateDto.status === undefined) {
+      updateObject.$setOnInsert.status = 'locked';
+    }
+    if (updateDto.score === undefined) {
+      updateObject.$setOnInsert.score = 0;
+    }
+    if (updateDto.attempts_count === undefined) {
+      updateObject.$setOnInsert.attempts_count = 0;
+    }
+    
     const result = await this.userProgressModel
       .findOneAndUpdate(
         {
-          userId: toObjectId(userId, 'userId'),
-          stepId: toObjectId(stepId, 'stepId'),
+          userId: userObjectId,
+          stepId: stepObjectId,
         },
-        updateDto,
+        updateObject,
         { new: true, upsert: true },
       )
       .exec();
@@ -139,39 +162,40 @@ export class UserProgressService {
     stepId: string,
     score: number,
   ): Promise<UserProgress> {
-    // Buscar progreso existente, si no existe crear uno nuevo
-    let progress: UserProgressDocument | null = null;
+    const userObjectId = toObjectId(userId, 'userId');
+    const stepObjectId = toObjectId(stepId, 'stepId');
     
-    try {
-      progress = await this.userProgressModel.findOne({
-        userId: toObjectId(userId, 'userId'),
-        stepId: toObjectId(stepId, 'stepId'),
-      }).exec();
-    } catch (error) {
-      // Si hay error al buscar, crear nuevo progreso
-      progress = null;
-    }
+    // Usar findOneAndUpdate con upsert para evitar duplicados
+    // Esto garantiza atomicidad y previene race conditions
+    const result = await this.userProgressModel
+      .findOneAndUpdate(
+        {
+          userId: userObjectId,
+          stepId: stepObjectId,
+        },
+        {
+          $set: {
+            status: 'completed',
+            score: score,
+            completed_at: new Date(),
+          },
+          $inc: {
+            attempts_count: 1,
+          },
+          $setOnInsert: {
+            userId: userObjectId,
+            stepId: stepObjectId,
+            unlocked_at: new Date(),
+          }
+        },
+        { 
+          new: true, 
+          upsert: true,
+        },
+      )
+      .exec();
 
-    if (!progress) {
-      // Si no existe, crear nuevo progreso
-      const newProgress = new this.userProgressModel({
-        userId: toObjectId(userId, 'userId'),
-        stepId: toObjectId(stepId, 'stepId'),
-        status: 'completed',
-        score: score,
-        attempts_count: 1,
-        unlocked_at: new Date(),
-        completed_at: new Date(),
-      });
-      return newProgress.save();
-    }
-
-    progress.status = 'completed';
-    progress.score = score;
-    progress.completed_at = new Date();
-    progress.attempts_count = (progress.attempts_count || 0) + 1;
-
-    return progress.save();
+    return result;
   }
 }
 

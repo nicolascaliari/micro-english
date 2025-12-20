@@ -18,7 +18,11 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "clean-duplicates": "ts-node -r tsconfig-paths/register src/scripts/clean-duplicate-progress.ts",
+    "clean-duplicate-steps": "ts-node -r tsconfig-paths/register src/scripts/clean-duplicate-steps.ts",
+    "check-unlocks": "ts-node -r tsconfig-paths/register src/scripts/check-unlock-requirements.ts",
+    "fix-unlocks": "ts-node -r tsconfig-paths/register src/scripts/fix-unlock-requirements.ts"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",

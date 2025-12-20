@@ -40,6 +40,22 @@ export class StepAttemptsService {
   }
 
   async startAttempt(userId: string, stepId: string): Promise<StepAttempt> {
+    // Buscar si ya existe un intento activo (sin completar) para este usuario y step
+    const existingAttempt = await this.stepAttemptModel
+      .findOne({
+        userId: toObjectId(userId, 'userId'),
+        stepId: toObjectId(stepId, 'stepId'),
+        completed_at: null, // Solo intentos no completados
+      })
+      .sort({ started_at: -1 }) // El más reciente
+      .exec();
+
+    // Si ya existe un intento activo, retornarlo
+    if (existingAttempt) {
+      return existingAttempt;
+    }
+
+    // Si no existe, crear uno nuevo
     const attempt = new this.stepAttemptModel({
       userId: toObjectId(userId, 'userId'),
       stepId: toObjectId(stepId, 'stepId'),
